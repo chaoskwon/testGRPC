@@ -1,0 +1,8 @@
+syntax = "proto3";
+package grpc;
+
+option go_package = "github.com/beautiful-store/grpc";
+
+message Member {
+  string ids = 1;
+}
