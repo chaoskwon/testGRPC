@@ -1,8 +1,18 @@
 syntax = "proto3";
 package grpc;
 
-option go_package = "github.com/beautiful-store/grpc";
+option go_package = "./";
 
-message Member {
+message MemberGetRequest {
   string ids = 1;
 }
+
+service MemberService {
+  rpc GetMembers(MemberGetRequest) returns (MemberGetResponse);
+}
+
+message MemberGetResponse {
+  int32 response_code = 1;
+  string response_message = 2;
+}
+
